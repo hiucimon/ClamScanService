@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_complete" default="compile.module.complete">
+  <dirname property="module.complete.basedir" file="${ant.file.module_complete}"/>
+  
+  <property name="module.jdk.home.complete" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.complete" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.complete" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.complete" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="complete.output.dir" value="${module.complete.basedir}/../../out/production/complete"/>
+  <property name="complete.testoutput.dir" value="${module.complete.basedir}/../../out/test/complete"/>
+  
+  <path id="complete.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="complete.module.production.classpath">
+    <path refid="${module.jdk.classpath.complete}"/>
+  </path>
+  
+  <path id="complete.runtime.production.module.classpath">
+    <pathelement location="${complete.output.dir}"/>
+  </path>
+  
+  <path id="complete.module.classpath">
+    <path refid="${module.jdk.classpath.complete}"/>
+    <pathelement location="${complete.output.dir}"/>
+  </path>
+  
+  <path id="complete.runtime.module.classpath">
+    <pathelement location="${complete.testoutput.dir}"/>
+    <pathelement location="${complete.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.complete">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.complete">
+    <patternset refid="excluded.from.module.complete"/>
+  </patternset>
+  
+  
+  <target name="compile.module.complete" depends="compile.module.complete.production,compile.module.complete.tests" description="Compile module complete"/>
+  
+  <target name="compile.module.complete.production" depends="register.custom.compilers" description="Compile module complete; production classes"/>
+  
+  <target name="compile.module.complete.tests" depends="register.custom.compilers,compile.module.complete.production" description="compile module complete; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.complete" description="cleanup module">
+    <delete dir="${complete.output.dir}"/>
+    <delete dir="${complete.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_complete_main" default="compile.module.complete_main">
+  <dirname property="module.complete_main.basedir" file="${ant.file.module_complete_main}"/>
+  
+  <property name="module.jdk.home.complete_main" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.complete_main" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.complete_main" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.complete_main" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="complete_main.output.dir" value="${module.complete_main.basedir}/../../build/classes/main"/>
+  <property name="complete_main.testoutput.dir" value="${module.complete_main.basedir}/../../build/classes/main"/>
+  
+  <path id="complete_main.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="complete_main.module.production.classpath">
+    <path refid="${module.jdk.classpath.complete_main}"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-devtools:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-configuration-processor:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-web:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf-spring4:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-autoconfigure:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.json:json:20140107.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-core:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-logging:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-tomcat:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.hibernate:hibernate-validator:5.2.4.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-databind:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-web:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-webmvc:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.codehaus.groovy:groovy:2.4.7.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-context:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-classic:1.1.8.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jcl-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jul-to-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:log4j-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-core:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-el:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-websocket:8.5.6.classpath"/>
+    <path refid="library.gradle:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.gradle:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml:classmate:1.3.3.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-annotations:2.8.5.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-aop:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-beans:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-expression:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ognl:ognl:3.0.8.classpath"/>
+    <path refid="library.gradle:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.gradle:_org.unbescape:unbescape:1.1.0.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-core:1.1.8.classpath"/>
+  </path>
+  
+  <path id="complete_main.runtime.production.module.classpath">
+    <pathelement location="${complete_main.output.dir}"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-devtools:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-configuration-processor:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-web:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf-spring4:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-autoconfigure:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.json:json:20140107.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-core:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-logging:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-tomcat:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.hibernate:hibernate-validator:5.2.4.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-databind:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-web:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-webmvc:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.codehaus.groovy:groovy:2.4.7.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-context:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-classic:1.1.8.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jcl-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jul-to-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:log4j-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-core:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-el:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-websocket:8.5.6.classpath"/>
+    <path refid="library.gradle:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.gradle:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml:classmate:1.3.3.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-annotations:2.8.5.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-aop:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-beans:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-expression:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ognl:ognl:3.0.8.classpath"/>
+    <path refid="library.gradle:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.gradle:_org.unbescape:unbescape:1.1.0.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-core:1.1.8.classpath"/>
+  </path>
+  
+  <path id="complete_main.module.classpath">
+    <path refid="${module.jdk.classpath.complete_main}"/>
+    <pathelement location="${complete_main.output.dir}"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-devtools:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-configuration-processor:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-web:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf-spring4:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-autoconfigure:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.json:json:20140107.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-core:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-logging:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-tomcat:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.hibernate:hibernate-validator:5.2.4.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-databind:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-web:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-webmvc:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.codehaus.groovy:groovy:2.4.7.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-context:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-classic:1.1.8.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jcl-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jul-to-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:log4j-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-core:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-el:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-websocket:8.5.6.classpath"/>
+    <path refid="library.gradle:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.gradle:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml:classmate:1.3.3.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-annotations:2.8.5.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-aop:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-beans:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-expression:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ognl:ognl:3.0.8.classpath"/>
+    <path refid="library.gradle:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.gradle:_org.unbescape:unbescape:1.1.0.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-core:1.1.8.classpath"/>
+  </path>
+  
+  <path id="complete_main.runtime.module.classpath">
+    <pathelement location="${complete_main.output.dir}"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-thymeleaf:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-devtools:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-configuration-processor:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-web:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf-spring4:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:1.4.0.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-autoconfigure:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.json:json:20140107.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-core:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-logging:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.gradle:_org.springframework.boot:spring-boot-starter-tomcat:1.4.3.release.classpath"/>
+    <path refid="library.gradle:_org.hibernate:hibernate-validator:5.2.4.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-databind:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-web:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-webmvc:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.thymeleaf:thymeleaf:2.1.5.release.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.codehaus.groovy:groovy:2.4.7.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-context:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-classic:1.1.8.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jcl-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:jul-to-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.slf4j:log4j-over-slf4j:1.7.22.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-core:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-el:8.5.6.classpath"/>
+    <path refid="library.gradle:_org.apache.tomcat.embed:tomcat-embed-websocket:8.5.6.classpath"/>
+    <path refid="library.gradle:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.gradle:_org.jboss.logging:jboss-logging:3.3.0.final.classpath"/>
+    <path refid="library.gradle:_com.fasterxml:classmate:1.3.3.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-annotations:2.8.5.classpath"/>
+    <path refid="library.gradle:_com.fasterxml.jackson.core:jackson-core:2.8.5.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-aop:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-beans:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_org.springframework:spring-expression:4.3.5.release.classpath"/>
+    <path refid="library.gradle:_ognl:ognl:3.0.8.classpath"/>
+    <path refid="library.gradle:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.gradle:_org.unbescape:unbescape:1.1.0.release.classpath"/>
+    <path refid="library.gradle:_ch.qos.logback:logback-core:1.1.8.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.complete_main">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.complete_main">
+    <patternset refid="excluded.from.module.complete_main"/>
+  </patternset>
+  
+  <path id="complete_main.module.sourcepath">
+    <dirset dir="${module.complete_main.basedir}/../../src/main">
+      <include name="java"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.complete_main" depends="compile.module.complete_main.production,compile.module.complete_main.tests" description="Compile module complete_main"/>
+  
+  <target name="compile.module.complete_main.production" depends="register.custom.compilers" description="Compile module complete_main; production classes">
+    <mkdir dir="${complete_main.output.dir}"/>
+    <javac2 destdir="${complete_main.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.complete_main}/javac">
+      <compilerarg line="${compiler.args.complete_main}"/>
+      <bootclasspath refid="complete_main.module.bootclasspath"/>
+      <classpath refid="complete_main.module.production.classpath"/>
+      <src refid="complete_main.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.complete_main"/>
+    </javac2>
+    
+    <copy todir="${complete_main.output.dir}">
+      <fileset dir="${module.complete_main.basedir}/../../src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.complete_main.basedir}/../../src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.complete_main.tests" depends="register.custom.compilers,compile.module.complete_main.production" description="compile module complete_main; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.complete_main" description="cleanup module">
+    <delete dir="${complete_main.output.dir}"/>
+    <delete dir="${complete_main.testoutput.dir}"/>
+  </target>
+</project>
