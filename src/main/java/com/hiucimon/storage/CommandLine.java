@@ -1,4 +1,4 @@
-package hello.storage;
+package com.hiucimon.storage;
 
 import java.io.IOException;
 import java.util.concurrent.*;

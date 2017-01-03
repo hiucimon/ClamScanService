@@ -1,7 +1,7 @@
-package hello;
+package com.hiucimon;
 
-import hello.storage.StorageFileNotFoundException;
-import hello.storage.StorageService;
+import com.hiucimon.storage.StorageFileNotFoundException;
+import com.hiucimon.storage.StorageService;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
-package hello;
+package com.hiucimon;
 
-import hello.storage.StorageProperties;
-import hello.storage.StorageService;
+import com.hiucimon.storage.StorageProperties;
+import com.hiucimon.storage.StorageService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

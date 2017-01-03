@@ -1,8 +1,8 @@
-package hello;
+package com.hiucimon;
 
-import hello.storage.CommandLine;
-import hello.storage.StorageFileNotFoundException;
-import hello.storage.StorageService;
+import com.hiucimon.storage.StorageFileNotFoundException;
+import com.hiucimon.storage.CommandLine;
+import com.hiucimon.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
